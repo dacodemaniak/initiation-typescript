@@ -4,6 +4,7 @@
   "description": "Initiation à TypeScript",
   "main": "dist/main.js",
   "scripts": {
+    "launch": "node_modules/.bin/tsc src/main.ts && node src/main",
     "test": "jest"
   },
   "keywords": [
