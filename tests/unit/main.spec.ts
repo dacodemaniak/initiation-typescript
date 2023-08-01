@@ -11,4 +11,11 @@ describe('Main app', () => {
         let stringVar = 'Jean-Luc'
         expect(typeof stringVar).toBe('string')
     })
+
+    it(`Shoud be of type number`, () =>  {
+        // Sets a type to a variable
+        let numberVar: number
+        numberVar = 15 // var is no more "undefined"
+        expect(typeof numberVar).toBe('number')
+    })
 })
