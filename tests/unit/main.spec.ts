@@ -18,4 +18,10 @@ describe('Main app', () => {
         numberVar = 15 // var is no more "undefined"
         expect(typeof numberVar).toBe('number')
     })
+
+    it(`Should be of type boolean`, () => {
+        let booleanVar: boolean
+        booleanVar = true
+        expect(typeof booleanVar).toBe('boolean')
+    })
 })
