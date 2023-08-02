@@ -24,4 +24,14 @@ describe('Main app', () => {
         booleanVar = true
         expect(typeof booleanVar).toBe('boolean')
     })
+
+    it(`Should set a number constant with value 99`, () => {
+        const UNDER_HUNDRED: number = 99
+        expect(UNDER_HUNDRED).toBe(99)
+    })
+
+    it (`Should implicitly to be of boolean type`, () => {
+        const TRUE_ASSERT = true
+        expect(typeof TRUE_ASSERT).toBe('boolean')
+    })
 })
