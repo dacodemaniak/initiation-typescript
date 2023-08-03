@@ -1,0 +1,19 @@
+/**
+ * tests/unit/set-map.spec.ts
+ * Set and Map collections test case
+ * @author DaCoDeMaNiaK <jean-luc.aubert@aelion.fr>
+ * @version 1.0.0
+ * @see https://github.com/dacodemaniak/initiation-typescript/tree/step-8
+ */
+describe('Set and Map test case', () => {
+    it(`Should set a Set of strings`, () => {
+        // Sets a Set object using new keyword
+        const names: Set<string> = new Set<string>()
+        names.add('Jean-Luc')
+        names.add('Jean-Luc')
+        expect(typeof Array.from(names)[0]).toBe('string')
+        expect(names.size).toBe(1)
+    })
+
+
+})
