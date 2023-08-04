@@ -31,5 +31,26 @@ describe('Set and Map test case', () => {
         expect(list.size).toEqual(2)
     })
 
+    it(`Should instanciate a Map object`, () => {
+        const persons: Map<string, string> = new Map()
+        expect(persons).toBeInstanceOf(Map)
+    })
 
+    it(`Should have 3 elements after instanciation`, () => {
+        const persons: Map<string, string> = new Map([
+            ['first', 'Riri'],
+            ['second', 'Fifi'],
+            ['third', 'Loulou'] 
+        ])
+        expect(persons.size).toEqual(3)
+    })
+
+    it (`Should get 'Fifi'`, () => {
+        const persons: Map<string, string> = new Map([
+            ['first', 'Riri'],
+            ['second', 'Fifi'],
+            ['third', 'Loulou'] 
+        ])
+        expect(persons.get('second')).toEqual('Fifi')
+    })
 })
