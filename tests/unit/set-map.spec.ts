@@ -15,5 +15,29 @@ describe('Set and Map test case', () => {
         expect(names.size).toBe(1)
     })
 
+    it(`Should considers doublons`, () => {
+        // Sets an object
+        const firstObject: any = {
+            firstname: 'James',
+            lastname: 'Bond'
+        }
+        // Reference firstObject in another const
+        const secondObject = firstObject
+
+        // Sets a third object
+        const thirdObject: any = {
+            firstname: 'James',
+            lastname: 'Bond'
+        }
+
+        // Populate Set with these objects
+        const list: Set<any> = new Set<any>()
+        list
+            .add(firstObject)
+            .add(secondObject)
+            .add(thirdObject)
+        expect(list.size).toEqual(2)
+    })
+
 
 })
