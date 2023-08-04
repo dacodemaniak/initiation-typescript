@@ -23,19 +23,11 @@ describe('Set and Map test case', () => {
         }
         // Reference firstObject in another const
         const secondObject = firstObject
-
-        // Sets a third object
-        const thirdObject: any = {
-            firstname: 'James',
-            lastname: 'Bond'
-        }
-
         // Populate Set with these objects
         const list: Set<any> = new Set<any>()
-        list
             .add(firstObject)
             .add(secondObject)
-            .add(thirdObject)
+            .add({... firstObject})
         expect(list.size).toEqual(2)
     })
 
