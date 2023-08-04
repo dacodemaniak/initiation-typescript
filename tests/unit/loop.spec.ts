@@ -99,5 +99,34 @@ describe('Loops feature', () => {
         expect(counter).toBe(1)
     })
 
+    it(`Should get keys and values of a Map`, () => {
+        const persons: Map<string, string> = new Map([
+            ['first', 'Bond'],
+            ['second', 'Bonicel de la Batte'],
+            ['third', 'Sinclar']
+        ])
+        const values: Array<string> = []
 
+        for(const person of persons) {
+            values.push(person[1])
+        }
+        expect(values[0]).toEqual('Bond')
+    })
+
+    it(`Should collect 3 keys`, () => {
+        const keys: Array<string> = []
+        const foreachFunc = (value: string, key: string) => {
+            keys.push(key)
+        }
+        const persons: Map<string, string> = new Map([
+            ['first', 'Bond'],
+            ['second', 'Bonicel de la Batte'],
+            ['third', 'Sinclar']
+        ])
+
+        persons.forEach(foreachFunc)
+
+        expect(keys.length).toEqual(3)
+        expect(keys[0]).toEqual('first')
+    })
 })
