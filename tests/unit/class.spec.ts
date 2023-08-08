@@ -35,5 +35,4 @@ describe('Classes', () => {
         expect(person.firstname).toEqual('')
         expect(person.birthDate).toBeNull()
     })
-
 })
