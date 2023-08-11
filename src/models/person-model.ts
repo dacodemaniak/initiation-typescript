@@ -3,6 +3,8 @@ export class PersonModel {
     firstname: string
     protected _birthDate: Date | null
 
+    public readonly today = new Date()
+    
     constructor() {
         this._lastname = ''
         this.firstname = ''
