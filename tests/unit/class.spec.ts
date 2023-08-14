@@ -6,6 +6,7 @@
  * @see https://github.com/dacodemaniak/initiation-typescript/tree/step-9
  */
 import { OrderMethod } from '../../src/_helpers/order-method'
+import { Singleton } from '../../src/_patterns/singleton'
 import { PersonModel } from './../../src/models/person-model'
 
 describe('Classes', () => {
@@ -46,7 +47,18 @@ describe('Classes', () => {
         OrderMethod.sortDirective = -1 // Change sorter order
         numbers.sort(OrderMethod.sorter)
         expect(numbers[0]).toEqual(102)
+    })
 
+    it(`Should have only one occurrence for a Singleton`, () => {
+        const singleton: Singleton = Singleton.getInstance()
 
+        expect(singleton.instanceOcc).toEqual(1)
+
+        // Let's try to instanciate another object
+        const singletonNewInstance: Singleton = Singleton.getInstance()
+        expect(singleton.instanceOcc).toEqual(1)
+
+        expect(singletonNewInstance.instanceOcc).toEqual(1)
+        expect(singleton).toStrictEqual(singletonNewInstance)
     })
 })
