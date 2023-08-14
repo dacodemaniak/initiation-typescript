@@ -5,6 +5,7 @@
  * @version 1.0.0
  * @see https://github.com/dacodemaniak/initiation-typescript/tree/step-9
  */
+import { OrderMethod } from '../../src/_helpers/order-method'
 import { PersonModel } from './../../src/models/person-model'
 
 describe('Classes', () => {
@@ -34,5 +35,18 @@ describe('Classes', () => {
         expect(person.lastname).toEqual('')
         expect(person.firstname).toEqual('')
         expect(person.birthDate).toBeNull()
+    })
+
+    it(`Should sort number array in ascending then descending order`, () => {
+        const numbers: Array<number> = [58, 2, 8, 102, 3, 25]
+
+        numbers.sort(OrderMethod.sorter)
+        expect(numbers[0]).toEqual(2)
+
+        OrderMethod.sortDirective = -1 // Change sorter order
+        numbers.sort(OrderMethod.sorter)
+        expect(numbers[0]).toEqual(102)
+
+
     })
 })
