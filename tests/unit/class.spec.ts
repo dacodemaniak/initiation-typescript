@@ -7,6 +7,8 @@
  */
 import { OrderMethod } from '../../src/_helpers/order-method'
 import { Singleton } from '../../src/_patterns/singleton'
+import { LocalPersistance } from '../../src/_services/local-persistance'
+import { LocalStorage } from '../../src/_services/local-storage'
 import { PersonModel } from './../../src/models/person-model'
 
 describe('Classes', () => {
@@ -60,5 +62,16 @@ describe('Classes', () => {
 
         expect(singletonNewInstance.instanceOcc).toEqual(1)
         expect(singleton).toStrictEqual(singletonNewInstance)
+    })
+
+    it(`Should be an instance of LocalPersistance`, () => {
+        const storage = new LocalStorage()
+        expect(storage).toBeInstanceOf(LocalPersistance)
+    })
+
+    it(`Should be an instance of LocalStorage`, () => {
+        const storage = new LocalStorage()
+        expect(storage).toBeInstanceOf(LocalStorage)
+        expect(storage.key).toEqual('_USER_')
     })
 })
